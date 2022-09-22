@@ -3,17 +3,26 @@ import React, { useState } from "react";
 //create root component- App component
 
 function App() {
-  const handleChange = (event) => {
+  onsubmit = (event) => {
     event.preventDefault();
-    console.log("Value is: " , event.target.value)
-  }
-  
+    const { name, email, tel } = event.target.elements;
+    alert(`Hello ${name.value}! Your email is ${email.value} and your phone number is ${tel.value}. You may proceed.` )
+  };
+
   return (
     <section>
       <form className="form-container">
-        <input onChange={handleChange} type="text" placeholder="Enter your name"></input>
-        <input type="text" placeholder="Enter your email"></input>
-        <input type="text" placeholder="Enter your address"></input>
+        <input
+          type="text"
+          placeholder="Enter your name"
+          name="name"
+        ></input>
+        <input type="text" placeholder="Enter your email" name="email"></input>
+        <input
+          type="tel"
+          placeholder="Enter your phone number"
+          name="tel"
+        ></input>
         <button type="submit">Submit</button>
       </form>
     </section>
