@@ -9,3 +9,32 @@
   margin: 0 auto;
 }
 
+.counter-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.action-btn{
+  background-color: lightgreen;
+  border: none;
+  margin: 5px 10px;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: red;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.action-btn:hover{
+  background-color: green;
+  font-size: 21px;
+}
+
+.counter-label{
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
