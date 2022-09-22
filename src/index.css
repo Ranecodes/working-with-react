@@ -38,3 +38,32 @@
   font-weight: 700;
   text-align: center;
 }
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.form-container input{
+border: 1px #ccc solid;
+max-width: 200px;
+width: 100%;
+margin: 5px 0;
+padding: 8px 10px;
+border-radius: 5px;
+}
+
+.form-container button{
+border: none;
+background-color: rgb(60, 211, 0);
+color: white;
+max-width: 220px;
+width: 100%;
+margin: 5px 0;
+padding: 8px 10px;
+border-radius: 5px;
+cursor: pointer;
+}

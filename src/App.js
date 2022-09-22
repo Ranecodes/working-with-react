@@ -3,30 +3,19 @@ import React, { useState } from "react";
 //create root component- App component
 
 function App() {
-  const [counter, setCounter] = useState(0);
-  const handleClick = (event) => console.log("Button Clicked!");
-
-  const handleIncrement = (event) => {
+  const handleChange = (event) => {
     event.preventDefault();
-    setCounter((prev) => prev + 1);
-    console.log(counter);
-  };
-
-  const handleDecrement = (event) => {
-    event.preventDefault();
-    setCounter((prev) => prev - 1);
-    console.log(counter);
-  };
-
+    console.log("Value is: " , event.target.value)
+  }
+  
   return (
-    <section className="counter-container">
-      <div className="counter-label">{counter}</div>
-      <button className="action-btn" onClick={handleIncrement}>
-        Increment
-      </button>
-      <button className="action-btn" onClick={handleDecrement}>
-        Decrement
-      </button>
+    <section>
+      <form className="form-container">
+        <input onChange={handleChange} type="text" placeholder="Enter your name"></input>
+        <input type="text" placeholder="Enter your email"></input>
+        <input type="text" placeholder="Enter your address"></input>
+        <button type="submit">Submit</button>
+      </form>
     </section>
   );
 }
