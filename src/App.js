@@ -1,35 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-//create root component- App component
-
-function Car({data}){
-  return <div className="car">{`${data.brand} ${data.color} ${data.year}`}</div>
+function Loader() {
+  return <div>Loading...</div>
 }
 
+function Content() {
+  return <div>Raneh Egbe is a 22- year old girl who lives in Lagos, Nigeria.</div>
+}
+
+//Root Component
 function App() {
-  const cars = [
-    {
-      brand: "Tesla",
-      color: "Red",
-      year: "2022"
-    },
-    {
-      brand: "Audi",
-      color: "Black",
-      year: "2018"
-    },
-    {
-      brand: "BMW",
-      color: "Yellow",
-      year: "2010"
-    }
-  ]
+  const [isLoading, setIsLoading] = useState(true)
 
-  const listOfCars = cars.map((car) => {
-    return <Car data={car}/>
-  })
+  setTimeout(() => {
+    setIsLoading(false)
+  }, 3000)
 
-  return <section className="car-container">{listOfCars}</section>
+  return <section>
+    {isLoading ? <Loader/> : <Content/>}
+  </section>
+  
 }
 
 export default App;
