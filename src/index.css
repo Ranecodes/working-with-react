@@ -67,3 +67,15 @@ padding: 8px 10px;
 border-radius: 5px;
 cursor: pointer;
 }
+
+.car{
+  border: none;
+  background-color: pink;
+  margin: 5px;
+  padding: 10px 20px;
+  max-width: 150px;
+  width: 100%;
+  text-align: center;
+  color: black;
+  border-radius: 10px;
+}
