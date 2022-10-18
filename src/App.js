@@ -1,25 +1,62 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function Loader() {
-  return <div>Loading...</div>
-}
+// create a custom hook
+const useGetData = (type) => {
+  //set up the state
+  const [data, setData] = useState([]);
 
-function Content() {
-  return <div>Raneh Egbe is a 22- year old girl who lives in Lagos, Nigeria.</div>
-}
+  // use effect hook
+  useEffect(() => {
+    //lists
+    const cars = [
+      {
+        id: 1,
+        name: "BMW",
+        year: "2019",
+      },
+      {
+        id: 2,
+        name: "Audi",
+        year: "2018",
+      },
+      {
+        id: 3,
+        name: "Mercedes",
+        year: "2017",
+      },
+    ];
+    // books
+    const books = [
+      {
+        id: 1,
+        name: "Harry Potter",
+      },
+      {
+        id: 2,
+        name: "Lord of the Rings",
+      },
+    ];
+
+    // do magic...
+    if (type === "cars") {
+      setData(cars);
+    } else if (type === "books") {
+      setData(books);
+    } else {
+      setData([]);
+    }
+  }, [type]);
+
+  return [data];
+};
 
 //Root Component
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [data] = useGetData("cars");
 
-  setTimeout(() => {
-    setIsLoading(false)
-  }, 3000)
+  console.log(data)
 
-  return <section>
-    {isLoading ? <Loader/> : <Content/>}
-  </section>
-  
+  return <section></section>;
 }
 
 export default App;
